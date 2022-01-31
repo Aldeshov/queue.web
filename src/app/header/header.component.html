@@ -1,0 +1,71 @@
+<div id="header" class="flex flex-row flex-center box gray-box">
+    <div class="text-button" (click)="home()">
+        Home
+    </div>
+    <div *ngIf="!loading" id="user" class="flex flex-row flex-center">
+        <h4 *ngIf="user"> {{ user.first_name }} {{ user.last_name }}</h4>
+        <h4 *ngIf="!user">Guest</h4>
+        <button *ngIf="user" (click)="logout()">Log out</button>
+    </div>
+    <div *ngIf="!loading && !user">
+        <form>
+            <input type="text" placeholder="username" [(ngModel)]="lusername" [ngModelOptions]="{standalone: true}"/>
+            <input type="password" placeholder="password" [(ngModel)]="lpassword" [ngModelOptions]="{standalone: true}"/>
+            <button (click)="onSubmit()">Sign in</button>
+        </form>
+    </div>
+    <div *ngIf="!loading && !user">
+        <button (click)="signup()">Sign up</button>
+    </div>
+    <div *ngIf="loading">
+        <img src="/assets/loading.svg" width="50px" style="margin-right: 40px"/>
+    </div>
+</div>
+
+<div id="registration" *ngIf="issignup" class="box main-box">
+    <table>
+        <tr>
+            <td>
+                <label>First Name</label>
+            </td>
+            <td>
+                <input type="text" placeholder="First Name" required [(ngModel)]="first_name"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Last Name</label>
+            </td>
+            <td>
+                <input type="text" placeholder="Last Name" required [(ngModel)]="last_name"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Username</label>
+            </td>
+            <td>
+                <input type="text" placeholder="Username" required [(ngModel)]="username"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Password</label>
+            </td>
+            <td>
+                <input type="password" placeholder="Password" required [(ngModel)]="password"/>
+            </td>
+        </tr>
+        <tr>
+            <h4 style="color: rgb(228, 63, 63);">Attention! This data cannot be changed after registration!</h4>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td id="last-buttons" class="flex flex-row">
+                <button (click)="send()">Sign Up</button>
+                <button (click)="cancel()">Cancel</button>
+            </td>
+        </tr>
+    </table>
+</div>

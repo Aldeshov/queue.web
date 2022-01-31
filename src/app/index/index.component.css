@@ -1,0 +1,13 @@
+h2 {
+    color: #444;
+    font-weight: lighter;
+}
+
+h4 {
+    color: rgb(165, 165, 165);
+    font-weight: lighter;
+}
+
+#add-queue {
+    max-width: 500px;
+}

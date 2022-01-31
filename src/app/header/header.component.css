@@ -1,0 +1,11 @@
+#header {
+    border: 1px solid rgb(220,220,220);
+}
+
+#last-buttons {
+    justify-content: space-between;
+}
+
+#user {
+    min-width: 200px;
+}

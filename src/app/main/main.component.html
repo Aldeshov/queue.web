@@ -1,0 +1,65 @@
+<div *ngIf="queue" class="flex flex-column flex-center-space">
+    <div id="main" *ngIf="!loadinginfo" class="flex flex-row flex-center box main-box long-box">
+        <div class="flex flex-row flex-center">
+            <div class="left"> 
+                <label style="font-style: oblique;">{{ queue.title }}</label>
+            </div>
+            <div>Members 
+                <label style="font-weight: bold;">{{ queue.quantity }}</label>
+            </div>
+        </div>
+
+        <div *ngIf="this.status == 2" class="flex flex-row flex-center">
+            <div *ngIf="!getisin()">
+                <input type="text" placeholder="Comment" [(ngModel)]="comment"/>
+                <button (click)="join()">Join</button>
+            </div>
+            <div *ngIf="getisin() && getisactive()">
+                <button (click)="remove()">Remove me</button>
+            </div>
+            <div class="right">
+                <button (click)="delete()" style="color: red;">Delete queue</button>
+            </div>
+        </div>
+
+        <div *ngIf="status == 1">
+            <div *ngIf="!getisin()">
+                <input type="text" placeholder="Comment" [(ngModel)]="comment"/>
+                <button (click)="join()">Join</button>
+            </div>
+            <div *ngIf="getisin() && getisactive()">
+                <button (click)="remove()">Remove me</button>
+            </div>
+        </div>
+
+        <div *ngIf="status == 0">
+            Only view
+        </div>
+    </div>
+
+    <div class="box main-box" *ngIf="loadinginfo">
+        <h3>Loading</h3>
+    </div>
+
+    <div class="flex flex-column flex-start last" *ngIf="!loadingmembers">
+        <div class="flex flex-row" *ngFor="let m of members">
+            <label [class]="m.active + 'a left'"> # {{ m.place }} </label>
+            <label [class]="m.active + 'a left'"> {{ m.user.first_name }} {{ m.user.last_name }}</label>
+            <label [class]="m.active + 'b left'"> {{ m.comment }} </label>
+            <div *ngIf="this.status == 2 && m.active" (click)="removeMember(m.user.id)" class="pointer">
+                <img src="/assets/x.svg" width="16"/>
+            </div>
+        </div>
+        <div *ngIf="!members.length">
+            <label style="color: rgb(151, 151, 151);">No members</label>
+        </div>
+    </div>
+    
+    <div *ngIf="loadingmembers" class="last">
+        <h4>Loading</h4>
+    </div>
+</div>
+
+<div *ngIf="!queue && !loadinginfo" style="margin-left: 45%;">
+    <h1>Not Found</h1>
+</div>

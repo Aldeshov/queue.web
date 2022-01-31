@@ -1,0 +1,42 @@
+<div id="add-queue" *ngIf="adding" class="box main-box">
+    <table>
+        <tr>
+            <td>
+                <label>Title</label>
+            </td>
+            <td>
+                <input type="text" placeholder="Title" required [(ngModel)]="title"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button (click)="send()">Add</button>
+            </td>
+            <td>
+                <button (click)="cancel()">Cancel</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div id="queues" class="flex flex-column box main-box" *ngIf="!loading">
+    <h2>Queues</h2>
+    <div class="flex flex-column flex-center" *ngIf="authorized">
+        <div class="flex flex-row flex-center box mini-block" *ngFor="let q of queues" (click)="go(q.code)">
+            <label class="pointer"> {{ q.title }} </label>
+            <label class="pointer"> {{ q.code }} </label>
+            <label class="pointer"> {{ q.last }} </label>
+        </div>
+        <label *ngIf="!queues.length" style="color: rgb(151, 151, 151); min-width: 90px;" >No queues</label>
+        <div class="last">
+            <button (click)="addQueue()">Add</button>
+        </div>
+    </div>
+    <div *ngIf="!authorized">
+        <h4>Needs to sign in/sign up to view queues</h4>
+    </div>
+</div>
+
+<div *ngIf="loading" class="box main-box">
+    <h2>Loading</h2>
+</div>

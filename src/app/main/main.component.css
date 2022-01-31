@@ -1,0 +1,29 @@
+.flex-center-space {
+    align-items: center;
+    justify-content: space-around;
+}
+
+.right {
+    margin-left: 10px;
+}
+
+.left {
+    margin-right: 10px;
+}
+
+.falsea, .falseb {
+    color: rgb(179, 179, 179);
+}
+
+.falsea {
+    text-decoration: line-through;
+}
+
+.truea {
+    font-weight: bold;
+}
+
+.flex-start {
+    align-items: flex-start;
+    justify-content: flex-start;
+}

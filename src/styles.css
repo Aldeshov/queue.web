@@ -1,0 +1,144 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 1000px;
+    min-height: 500px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+button {
+    cursor: pointer;
+    font-size: 14px;
+    background-color: rgb(245,245,245);
+    border: 1px solid rgb(220,220,220);
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: rgb(210,210,210);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:active {
+    background-color: rgb(170,170,170);
+    border: 1px solid rgb(200,200,200);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px #1a1a1b inset !important;
+  -webkit-text-fill-color: aliceblue !important;
+}
+
+input {
+    margin: 5px;
+    padding: 5px;
+    border: none;
+    border: 1px solid rgb(216, 216, 216);
+    border-radius: 1%;
+    transition: 0.3s;
+    background-color: rgb(250, 250, 250);
+}
+
+table {
+    width: 100%;
+    height: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-center {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gray-box {
+    background-color: rgb(247, 247, 247);
+}
+
+.box {
+    padding: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    transition: 0.2s;
+}
+
+.text-button {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+    padding: 5px;
+    border: 1px solid rgb(220,220,220);
+    border-radius: 5px;
+}
+
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    transition: 0.2s;
+}
+
+.main-box {
+    min-width: 500px;
+    background-color: #f7f7f7;
+    border: 1px solid #e2e2e2;
+    border-radius: 10px;
+    margin-top: 2%;
+    margin-left: 25% !important;
+    margin-right: 25% !important;
+    box-shadow: 0 0 10px rgba(212, 212, 212, 0.7);
+}
+
+.mini-block {
+    width: 80%;
+    min-height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #f7f7f7;
+    border: 1px solid #dbdbdb;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(212, 212, 212, 0.7);
+    transition: 0.1s;
+}
+
+.mini-block:hover {
+    background-color: rgb(199, 199, 199);
+    transition: 0.1s;
+    cursor: pointer;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.last {
+    margin-top: 20px;
+}
+
+.long-box {
+    width: 75%;
+}
